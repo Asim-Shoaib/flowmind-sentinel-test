@@ -7,3 +7,8 @@ exports.add = (title) => {
   todos.push(todo);
   return todo;
 };
+exports.toggle = (id) => {
+  const todo = todos.find((t) => t.id === id);
+  if (todo) todo.done = !todo.done;
+  return todo;
+};
