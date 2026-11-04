@@ -12,3 +12,7 @@ exports.toggle = (id) => {
   if (todo) todo.done = !todo.done;
   return todo;
 };
+exports.remove = (id) => {
+  const i = todos.findIndex((t) => t.id == id);
+  todos.splice(i, 1);
+};
