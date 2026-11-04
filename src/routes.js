@@ -8,4 +8,8 @@ router.patch("/:id/toggle", (req, res) => {
   const todo = store.toggle(Number(req.params.id));
   return todo ? res.json(todo) : res.sendStatus(404);
 });
+router.delete("/:id", (req, res) => {
+  store.remove(req.params.id);
+  res.sendStatus(204);
+});
 module.exports = { router };
